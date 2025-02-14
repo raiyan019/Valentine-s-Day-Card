@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: pink;
+    overflow: hidden;
+}
+.card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: radial-gradient(white, transparent);
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 20px;
+}
+.heart-frame {
+    position: relative;
+    width: 100%;
+    height: 60%;
+    background: url('./image/7bcad49f-21ab-4380-b095-f20200b782d5.jpeg') center/cover no-repeat;
+    border-radius: 50%;
+    border: 5px solid pink;
+}
+.floating-hearts, .floating-flowers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+.heart, .flower {
+    position: absolute;
+    bottom: -10px;
+    width: 20px;
+    height: 20px;
+    animation: floatUp 4s linear infinite;
+}
+.heart {
+    background: red;
+    clip-path: path("M10,30 A10,10 0 1,1 20,10 A10,10 0 1,1 30,30 Q20,45 10,30 Z");
+}
+.flower {
+    
+    width: 30px;
+    height: 30px;
+}
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+}
